@@ -23,7 +23,7 @@ pipeline {
         }*/
         stage('Compile & Test') {
             steps {
-                sh 'mvn clean compile test'
+                sh 'mvn clean install'
             }
             post {
                 always {
