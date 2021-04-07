@@ -32,9 +32,6 @@ pipeline {
             }
         }
         stage('SonarQube analysis') {
-            when {
-                branch 'develop'
-            }
             steps {
                 withSonarQubeEnv('SonarQube Server') {
                     sh 'printenv'
