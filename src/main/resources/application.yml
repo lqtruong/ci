@@ -1,0 +1,14 @@
+server:
+  port: 8086
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/order-service
+      auto-index-creation: true
+
+logging:
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    com.pycogroup.training: DEBUG
