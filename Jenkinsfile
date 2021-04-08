@@ -8,6 +8,7 @@ pipeline {
     tools {
         maven 'Maven 3.6.3'
         jdk 'OpenJDK11'
+        sonar 'SonarScanner'
         //docker
     }
     triggers {
