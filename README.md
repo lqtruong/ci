@@ -77,7 +77,7 @@ Create a project (e.g. ci-sample) using Spring Boot and create the `Jenkinsfile`
 - [Jenkinsfile](Jenkinsfile) to define Pipeline
 - Create a Jenkins job (e.g. ci-sample) in Jenkins Server
 
-#Troubleshoots:
+# Troubleshoots
 ```
 [Checks API] No suitable checks publisher found
 ```
