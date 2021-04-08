@@ -83,3 +83,9 @@ Create a project (e.g. ci-sample) using Spring Boot and create the `Jenkinsfile`
 ```
 
 For this issue, we have to install plugin `Checks API` in Manage Jenkins > Manage Plugins > Checks API
+
+# Results
+Jenkins Pipeline jobs are triggered for every time the Git has changes.
+![Jenkins Result](jenkins-sonar/Jenkins_ci-sample-results.png)
+SONAR report will be published after Jenkins job build & test run passed.
+![Sonar Result](jenkins-sonar/SONAR_ci-sample-results.png)
