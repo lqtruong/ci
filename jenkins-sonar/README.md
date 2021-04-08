@@ -1,7 +1,5 @@
 # Install local Jenkins + SONAR
 
-Continuous Integration &amp; Development (CI/CD) with Jenkins Pipeline for Spring Boot projects
-
 ## Install Jenkins
 Start Jenkins using docker by below command
 
@@ -11,7 +9,7 @@ docker-compose -f jenkins.yml up
 
 Check the host running at: `http://localhost:8083`
 
-![Jenkins Home](jenkins-sonar/Jenkins_Localhost.png)
+![Jenkins Home](Jenkins_Localhost.png)
 
 Docker start with Jenkins container path storage info: /var/jenkins_home
 
@@ -22,17 +20,17 @@ Change Jenkins Admin Password if forgot
 
 Edit `config.xml` file for corresponding user by updating the encrypting password. Save the `config.xml` file.
 
-We can install module `vim` on linux by
+We can install module `vim` on linux by 
 
 ```
 apt-get update
 apt-get install vim
 ```
 
-Or if we use Docker running on WinOS, we can open Jenkins docker container and check the according `mounted` path
+Or if we use Docker running on WinOS, we can open Jenkins docker container and check the according `mounted` path 
 and go to change the password there. After that, we restart Jenkins server
 
-![Jenkins path mounted on WinOS Example](jenkins-sonar/Jenkins_Mounted_WinOS.png)
+![Jenkins path mounted on WinOS Example](Jenkins_Mounted_WinOS.png)
 
 Docker find path mounted to HOST: `C:\Users\truong.lequoc\jenkins_data\`
 
@@ -49,35 +47,35 @@ docker-compose -f sonar.yml up
 
 Check the host running at: `http://localhost:9000`
 
-![Sonar Homepage](jenkins-sonar/Sonar_Localhost.png)
+![Sonar Homepage](Sonar_Localhost.png)
 
 # Configure Jenkins to connected to SONAR
 - add tools SONARQUBE Scanner, Git, JUnit, Maven, JDK11 in Jenkins Server: (e.g. **Manage Jenkins > Global Tool
   Configuration)
 - add plugins Checks API in Jenkins Server (e.g. **Manage Jenkins > Manage Plugins > Checks API**)
 - Go to SONAR and generate Token to access from Jenkins
-  ![SONAR generate access token](jenkins-sonar/SONAR_Generate_Token.png)
+![SONAR generate access token](SONAR_Generate_Token.png)
 - Configure SonarQube Server in **Manage Jenkins > Configure System > SonarQube Servers**
+  
+![SonarQube Server](SonarQubeServer_Config.png)
 
-![SonarQube Server](jenkins-sonar/SonarQubeServer_Config.png)
-
-Since SONAR is running on Docker as well, different containers from Jenkins. Thus, we have to access to public IP of
+Since SONAR is running on Docker as well, different containers from Jenkins. Thus, we have to access to public IP of 
 SONAR. To find this IP (e.g. 172.21.0.1), we inspect SONAR container
 
 ```	
  docker inspect <sonar container id>
 ```
 The result as shown below
-![SONAR public IP](jenkins-sonar/SONAR_Public_IP.png)
+![SONAR public IP](SONAR_Public_IP.png)
 
 # Jenkins Pipeline
 Create a project (e.g. ci-sample) using Spring Boot and create the `Jenkinsfile` at the root folder
 
-- Spring Boot Java project using Maven and include `Jacoco` plugin for code coverage report. See it in [pom file](pom.xml)
-- [Jenkinsfile](Jenkinsfile) to define Pipeline
+- Spring Boot Java project using Maven and include `Jacoco` plugin for code coverage report. See it in [pom file](../pom.xml)
+- [Jenkinsfile](../Jenkinsfile) to define Pipeline
 - Create a Jenkins job (e.g. ci-sample) in Jenkins Server
 
-#Troubleshoots:
+#Troubleshoots: 
 ```
 [Checks API] No suitable checks publisher found
 ```

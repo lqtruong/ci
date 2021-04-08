@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  sonarqube:
+    image: sonarqube:8.8-community
+    ports:
+      - "9000:9000"
+    environment:
+      JAVA_OPTS: -Xmx128m -Xms128m
+
+networks:
+  default:
+    external:
+      name: ci_cicdnet
