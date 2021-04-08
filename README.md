@@ -56,7 +56,9 @@ Check the host running at: `http://localhost:9000`
   Configuration)
 - add plugins Checks API in Jenkins Server (e.g. **Manage Jenkins > Manage Plugins > Checks API**)
 - Go to SONAR and generate Token to access from Jenkins
-  ![SONAR generate access token](jenkins-sonar/SONAR_Generate_Token.png)
+  
+![SONAR generate access token](jenkins-sonar/SONAR_Generate_Token.png)
+
 - Configure SonarQube Server in **Manage Jenkins > Configure System > SonarQube Servers**
 
 ![SonarQube Server](jenkins-sonar/SonarQubeServer_Config.png)
@@ -68,6 +70,7 @@ SONAR. To find this IP (e.g. 172.21.0.1), we inspect SONAR container
  docker inspect <sonar container id>
 ```
 The result as shown below
+
 ![SONAR public IP](jenkins-sonar/SONAR_Public_IP.png)
 
 # Jenkins Pipeline
@@ -86,6 +89,9 @@ For this issue, we have to install plugin `Checks API` in Manage Jenkins > Manag
 
 # Results
 Jenkins Pipeline jobs are triggered for every time the Git has changes.
+
 ![Jenkins Result](jenkins-sonar/Jenkins_ci-sample-results.png)
+
 SONAR report will be published after Jenkins job build & test run passed.
+
 ![Sonar Result](jenkins-sonar/SONAR_ci-sample-results.png)
