@@ -95,3 +95,14 @@ Jenkins Pipeline jobs are triggered for every time the Git has changes.
 SONAR report will be published after Jenkins job build & test run passed.
 
 ![Sonar Result](jenkins-sonar/SONAR_ci-sample-results.png)
+
+# Advanced CI/CD
+We will go through the advanced configuration & features of CI/CD pipelines using Jenkins & SONAR
+
+## Parallel Jenkins jobs
+## SONAR rules & metrics customizations
+## Jenkins results to code review process
+## Customized Central Maven repository 
+(e.g. SONARtype Nexus Repository)
+## Docker images repository
+## AWS deployment scripts
