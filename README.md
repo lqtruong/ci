@@ -101,7 +101,7 @@ We will go through the advanced configuration & features of CI/CD pipelines usin
 
 ## Parallel Jenkins jobs
 ## SONAR rules & metrics customizations
-## Jenkins results to code review process
+## Jenkins/SONAR results back to code review process
 ## Customized Central Maven repository 
 (e.g. SONARtype Nexus Repository)
 ## Docker images repository
